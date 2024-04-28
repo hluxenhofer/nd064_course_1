@@ -1,11 +1,50 @@
 ## Docker commands used to build the application 
-# TODO: insert the docker build command
+# running command in folder where Dockerfile is located /project
+docker build -t techtrends .
 
 ## Docker commands used to run the application
-# TODO: insert the docker run command
+docker run -d -p 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
-# TODO: insert the docker logs command
+# in my case container id was 590c273cd92b
+docker logs 590c273cd92b
 
 ## Logs from the container running the TechTrends application
-# TODO: paste logs from the Docker container 
+INFO:werkzeug: * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:11:42] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:11:42] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:11:42] "GET /favicon.ico HTTP/1.1" 404 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:11:45] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:11:45] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:11:51] "GET /metrics HTTP/1.1" 200 -
+INFO:app:Article "2020 CNCF Annual Report" retrieved!
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:12:04] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:12:04] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:Article "Kubernetes v1.20 Release Notes" retrieved!
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:12:06] "GET /3 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:12:06] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:12:12] "GET /create HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:12:12] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:New article "New Post" created!
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:12:19] "POST /create HTTP/1.1" 302 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:12:19] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:12:19] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:Article "New Post" retrieved!
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:12:21] "GET /7 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:12:21] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:12:24] "GET /healthz HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:12:28] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:12:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:12:43] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:19:17] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:19:17] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:Article "2020 CNCF Annual Report" retrieved!
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:19:18] "GET /1 HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:19:18] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:app:"About Us" page retrieved!
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:19:20] "GET /about HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:19:20] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:19:24] "GET /metrics HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:19:28] "GET /healthz HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:19:30] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:172.17.0.1 - - [28/Apr/2024 12:19:30] "GET /static/css/main.css HTTP/1.1" 304 -
