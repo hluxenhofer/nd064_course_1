@@ -77,12 +77,26 @@ def create():
 
 @app.route("/healthz")
 def healthz():
-    response = app.response_class(
+    try:
+        connection = get_db_connection()
+        result = connection.execute('SELECT name FROM sqlite_master WHERE type="table" AND name="posts"').fetchone()
+        if result is None:
+            raise Exception('Table "posts" not found!')
+
+        connection.close()
+        response = app.response_class(
             response=json.dumps({"result":"OK - healthy"}),
             status=200,
             mimetype='application/json'
-    )
-
+        )
+  
+    except Exception as e:
+        response = app.response_class(
+            response=json.dumps({"result":"ERROR - unhealthy"}),
+            status=500,
+            mimetype='application/json'
+        )
+    
     return response
 
 @app.route("/metrics")
