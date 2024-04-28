@@ -9,7 +9,7 @@ service:
 
 image:
   repository: heikolu/techtrends
-  tag: sha-df9e980
+  tag: latest
   pullPolicy: IfNotPresent
 
 replicaCount: 1
